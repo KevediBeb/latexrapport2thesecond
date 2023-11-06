@@ -11,6 +11,7 @@ h\documentclass[11p, titlepage, oneside, a4paper]{article}
 ]{biblatex}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
+\usepackage{booktabs}
 %Källor
 \addbibresource{mall.bib}
 \graphicspath{ {./images/} }
@@ -20,9 +21,9 @@ h\documentclass[11p, titlepage, oneside, a4paper]{article}
 \def\typeofdoc{Laborationsrapport}
 \def\course{Fysik 1 150p}
 \def\pretitle{Laboration 1}
-\def\title{Rörelse: Hastighet och acceleration}
+\def\title{Kraft}
 \def\name{Kevin Tornéus}
-\def\username{Kevin.tornéus}
+\def\username{kevin.torneus}
 \def\email{\username{}@ga.ntig.se}
 \def\graders{Magnus Silverdal}
 
@@ -59,9 +60,7 @@ h\documentclass[11p, titlepage, oneside, a4paper]{article}
 	\end{titlepage}
 
     \begin{otherlanguage}{english}
-	\begin{abstract}
-        This is the ``sammanfattning'', it is written in english and called the abstract.      
-    \end{abstract}
+
     \end{otherlanguage}
     % Om arbetet är långt har det en innehållsförteckning, annars kan den utelämnas
 	\pagenumbering{roman}
@@ -78,60 +77,103 @@ h\documentclass[11p, titlepage, oneside, a4paper]{article}
 	\setlength{\parskip}{10pt}
 	
 	\section{Syfte och frågeställning}
-		Syftet med laborationen är att analysera rörelse för en vagn som rullar längs en bana och beräkna hastighet och acceleration under rörelsen.
+		Syftet med denna labboration var att beräkna förhållandet mellan tyngdkraften och normalkraften när ett träblock glider ned från ett lutande plan. Förhållandet mellan hur en fjäder töjs ut beroende på kraften som tillsätts på dess ende ska också beräknas.
 
 	\section{Bakgrund och teori}
-        Med utgångspunkt från en film av förloppet kan mjukvara för motion tracking utnyttjas för att få fram vagnens position vid olika tidpunkter. Denna information används sedan tillsammans med definitionerna av medelhastighet $v_m = \frac{\Delta s}{\Delta t}$ och medelacceleration $a_m = \frac{\Delta v}{\Delta t}$ för att beräkna ett approximativt värde för hastigheten och accelerationen som funktion av tiden. Med ett tillräckligt kort tidssteg så blir medelvärdet ungefär lika med momentanvärdet och i filmen är tidssteget som störst $\frac{1}{25}$ sekund.  \parencite{impuls}
+        Genom att använde lutande planet som en triangel kan mätvärdena för denna triangel tas fram genom undersökningen och kan med hjälp av sinus och cosinus hjälpa oss att räkna ut tyngdkraften samt normalkraften.
 	
 
 	\section{Metod och materiel}
         \begin{enumerate}
-            \item Vagn
-            \item Lutande plan med ställning
-            \item Linjal
-            \item Mobilkamera
+            \item Kloss
+            \item Vikter och våg (+Ev tejp för att vikterna ska ligga kvar)
+            \item Lutande plan
+            \item Måttband eller mätstav
+            \item Fjäder
+            \item Vikter
+            \item Måttband eller mätstav
         \end{enumerate}
         
-        Det lutande planet monteras på ställningen så att den ena änden är 1 dm över bordet, se figur \ref{fig:lutandeplan}. Linjalen placeras längs planet så att det finns en längdskala  i filmen. Kameran placeras vid sidan av uppställningen på ett avstånd så att hela rörelsen ryms i filmen utan att kameran behöver flyttas. Vagnen rullas nedför planet samtidigt som kameran filmar rörelsen. Försöket placeras så att ljusförhållanden och bakgrund ger en så tydlig och skarp film som möjligt.
+        Det lutande planet höjs upp på ena sidan och skapar en hypotenusa, en linjal placeras sedan på denna sida och avläses sedan för att bedömma höjden på triangeln. De slutgiltiga mätvärdena beräknas och sätts in en tabell som bildar en graf, se figur \ref{fig:lutandeplan}.
         
         \begin{figure}[!h]
-            \includegraphics[width=0.8\textwidth]{images/lutandePlan.jpg}
-            \caption{En blid hade varit superbra här}
+            \includegraphics[width=0.8\textwidth]{images/tabell fysik labb2.PNG}
+            \caption{En bild som visar de slutgiltiga mätvärdena i punktform i ett diagram, trendlinjen visar även dess funktion.}
             \label{fig:lutandeplan}
         \end{figure}
         
-        Filmen analyserades sedan med mjukvaran Tracker för att få fram en tabell med positionen som funktion av tiden.
+        Med brädan som triangels hypotenusa så blev höjden på våran triangel lika med höjden som det krävdes för att klossen skulle glida ned.
     \newpage
 	\section{Analys och beräkning}
-        Datat från analysen av filmen visas i tabell \ref{table:result}
-    
-        
+        Datat från beräkningarna visas i en tabell, den första tabellen visar tyngdkraften och normalkraften för träblocket
+        och den andra tabellen visar hur vikten påvärkade längden på fjädern.\ref{table:result}
+
+
+
         \begin{table}
             \begin{center}
             \begin{tabular}{ |c|c| } 
                 \hline
-                Position (m) & Tid (s)  \\ 
+                Tyngdkraft (Ffr) & Normalkraft (N)  \\
                 \hline
-                0 & 0  \\ 
-                0.1 & 0.02 \\
-                \vdots & \vdots \\
+                1,907462 & 74,199762 \\
+                2,397812 & 61,038768 \\
+                2,888162 & 74,3909985 \\
+                3,378512 & 91,558152 \\
+                3,868862 & 74,3909985 \\
+
                 \hline
             \end{tabular}
                 \caption{Mätvärden}
                 \label{table:result}
             \end{center}
-        \end{table}            
-        
+        \end{table}
 
-    Datat importeras i Excel och hastigheten beräknas med hjälp av formeln
+        \ref{table:result2}
+
+        \begin{table}
+            \begin{center}
+                \begin{tabular}{ |c|c| }
+                    \hline
+                    Vikt (g) & Längd (cm)  \\
+                    \hline
+                    50 & 28 \\
+                    100 & 35 \\
+                    150 & 43 \\
+                    200 & 51 \\
+                    250 & 58 \\
+
+                    \hline
+                \end{tabular}
+                \caption{Mätvärden}
+                \label{table:result2}
+            \end{center}
+
+                \end{table}
+
+
+
+
+
+    Datat importeras i Excel och alla mätvärden beräknas med hjälp av formler.
     \begin{equation}
         v_m = \frac{\Delta s}{\Delta t}
     \end{equation}
     
-    \section{Slutsats och resultat} 
-        Resultatet av beräkningarna illustreras i graferna 2 och 3
+    \section{Slutsats och resultat}
+        Längdvärdena beroende på när klossen gled ned för triangeln stoppas in som en tabell i excel.
+        Med dessa värden kan sinus a beräknas i triangeln vilket sedan ger cosinus a och basen på triangeln.
+        Tyngdkraften räknas ut genom att ta gravitationen(9,807 N) och gångrar det med klossens vikt i kg. Normalkraften
+        räknas ut genom att ta arccos på triangeln och gångra med tyngdkraft och gravitationen:
+        cos a = b/c, arccos a = -cos(cos a),
+        Normalkraft(N) = arccos a * Ffr * 9,807
+
+
+        Resultatet av beräkningarna illustreras i grafen och tabellerna ovan.
     \section{Diskussion} 
-    Resultatet är perfekt...
+    Resultaten kan verka lite konstiga då höjden som brädan krävde för att klossen skull glida ned
+    fluktuerade upp och ned över när vikt sattes på klossen. Detta är därför att vi bara mätte med ögat och linjal.
+    Detta ger då inte ett exakt värde och vi kan ha sett fel.
 
     
     \printbibliography
